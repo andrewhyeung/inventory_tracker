@@ -1,0 +1,29 @@
+<div ng-controller = 'dashboardController'>
+	<input type='text' ng-model = 'filter_name' placeholder = 'filter'>
+	<h2>Products</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Product Name</th>
+				<th>Quantity Left</th>
+				<th>Image</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat='product in products | filter: filter_name'>
+				<td>{{ product.name }}</td>
+				<td>{{ product.qty}}</td>
+				<td><img src="{{product.img}}" alt="some_text" style="width: 100;height:100"></td>
+			</tr>
+		</tbody>
+	</table>
+	<h3>Recent Orders</h3>
+		<ul ng-repeat = 'order in orders'>
+			<li>{{ order.name }} purchased {{ order.qty }} {{order.product }} {{ order.created_at | date: YYYY}}</li>
+
+		</ul>
+	<h3>New Customers</h3>
+		<ul ng-repeat = 'customer in customers'>
+			<li>{{ customer.name }} joined the store. ({{ customer.created_at | date: YYYY }}) </li>
+		</ul>	
+</div>

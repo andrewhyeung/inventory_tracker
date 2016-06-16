@@ -1,0 +1,35 @@
+<div ng-controller ='productController'> 
+	<h1>Add a new product</h1>
+	<form ng-submit = 'addProduct()' id = ''>
+		Name: 
+		<input type = 'text' ng-model='new_product.name' placeholder = 'name'>
+		Image (url): 
+		<input type = 'text' ng-model = 'new_product.img' placeholder = 'http://'> 
+		Description: 
+		<textarea ng-model = 'new_product.description' id = 'text'></textarea>
+		Initial Quantity: 
+		<input type='number' min='1' ng-model='new_product.qty' ng-init='new_order.qty=1'>
+		<input type='submit' value = 'Create'>
+	</form>
+
+	<input type= 'text' ng-model = 'filter_name' placeholder= 'filter'>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>Product Name</th>
+				<th>Quantity</th>
+				<th>Image</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat = 'product in products'>
+				<td>{{ product.name }}</td>
+				<td>{{ product.qty }} </td>
+				<td><img src="{{product.img}}" alt="some_text" style="width: 100;height:100"></td>
+				<td>{{product.description}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

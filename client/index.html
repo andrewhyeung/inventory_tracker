@@ -1,0 +1,30 @@
+<html> 
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+	<script type="text/javascript">
+		var myApp = angular.module('myApp', ['ngRoute']);
+	</script>
+	<script type="text/javascript" src="./js/controllers/dashboardController.js"></script>
+	<script type="text/javascript" src="./js/factories/productFactory.js"></script>
+	<script type="text/javascript" src="./js/controllers/productController.js"></script>
+	<script type="text/javascript" src="./js/factories/orderFactory.js"></script>
+	<script type="text/javascript" src="./js/controllers/orderController.js"></script>
+	<script type="text/javascript" src="./js/factories/customerFactory.js"></script>
+	<script type="text/javascript" src="./js/controllers/customerController.js"></script>
+	<script type="text/javascript" src="./js/config/routes.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<link rel='stylesheet' href='./static/style.css'>
+	<title>Orders and Customers</title>
+</head>
+<body ng-app = 'myApp'>
+	<a href="#/">Dashboard</a> | <a href="#/products">Products</a> | <a href="#/orders">Orders</a> | <a href="#/customers">Customers</a> 
+	<div ng-view=""></div>  	
+</body>
+</html>
